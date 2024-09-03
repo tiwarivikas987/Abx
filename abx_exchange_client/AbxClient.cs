@@ -12,9 +12,10 @@ public static class AbxClient
 
         using TcpClient client = new TcpClient(hostname, port);
         
+        
         NetworkStream stream = client.GetStream();
 
-        // Step 4: Send Request to Stream All Packets
+        // Step 4: Send Request to Stream All Packets 
         byte[] requestPayload = new byte[] { 1, 0 }; // CallType 1, ResendSeq 0
         stream.Write(requestPayload, 0, requestPayload.Length);
 
